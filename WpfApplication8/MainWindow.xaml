@@ -1,0 +1,61 @@
+﻿<Window x:Class="WpfApplication8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+        <TextBox Width="120" Height="25" x:Name="txtDate" PreviewMouseUp="txtDate_PreviewMouseUp" IsReadOnly="True"  Focusable="False"/>
+        <Popup x:Name="popChooseDate" PopupAnimation="Fade" Width="220" Height="auto" PlacementTarget="{Binding ElementName=txtDate}" Placement="Bottom"  AllowsTransparency="True" StaysOpen="False">
+            <Border>
+                <Border.Background>
+                    <ImageBrush ImageSource="Images/popudate.png" />
+                </Border.Background>
+                <StackPanel Width="220" Height="250">
+                    <Calendar Canvas.Left="19" Canvas.Top="28" Width="186"  Height="168" HorizontalAlignment="Left" Name="calendar"  BorderThickness="0" />
+                    <Button Canvas.Left="41" Canvas.Top="190" Width="60" Height="30" Content="确定" x:Name="popbtnOK" ></Button>
+                    <Button Canvas.Left="112" Canvas.Top="190" Width="60" Height="30" Content="取消" x:Name="popbtnCancel"></Button>
+                </StackPanel>
+            </Border>
+        </Popup>
+
+            <TextBox Width="120" Height="25" x:Name="txtDate1" PreviewMouseUp="txtDate1_PreviewMouseUp"/>
+            <Popup x:Name="popChooseDate1" PopupAnimation="Fade" Width="220" Height="auto" PlacementTarget="{Binding ElementName=txtDate1}" Placement="Bottom"  AllowsTransparency="True" StaysOpen="False">
+                <!--<Border>
+                    <Border.Background>
+                        <ImageBrush ImageSource="Images/popudate.png" />
+                    </Border.Background>
+                    <StackPanel Width="220" Height="250">
+                        <Calendar Canvas.Left="19" Canvas.Top="28" Width="186"  Height="168" HorizontalAlignment="Left"  BorderThickness="0" />
+                        <Button Canvas.Left="41" Canvas.Top="190" Width="60" Height="30" Content="确定"></Button>
+                        <Button Canvas.Left="112" Canvas.Top="190" Width="60" Height="30" Content="取消"></Button>
+                    </StackPanel>
+                </Border>-->
+                <Border>
+                    <Border.Background>
+                        <ImageBrush ImageSource="Images/popudate.png" />
+                    </Border.Background>
+                    <StackPanel Margin="5">
+
+                        <Button Width="70" Height="31"  Margin="2"/>
+                        <Button Width="70" Height="31"  Margin="2"/>
+                        <Button Width="70" Height="31"  Margin="2"/>
+                    </StackPanel>
+                </Border>
+            </Popup>
+            <Button Width="100" Height="25" x:Name="btn_xiangji" Click="btn_xiangji_Click"></Button>
+            <Popup x:Name="Pop_xiangji" PopupAnimation="Fade" Width="225" Height="255" PlacementTarget="{Binding ElementName=txtDate}" Placement="Top" AllowsTransparency="True" StaysOpen="False" IsOpen="False">
+                <Border>
+                    <Border.Background>
+                        <ImageBrush ImageSource="Images/popudate.png" />
+                    </Border.Background>
+                    <StackPanel Margin="5">
+                        <Calendar Canvas.Left="19" Canvas.Top="28" Width="186"  Height="168" HorizontalAlignment="Left"  BorderThickness="0" />
+                        <Button Width="70" Height="31"  Margin="2" x:Name="btn123" Click="btn123_Click"/>
+                        <Button Width="70" Height="31"  Margin="2"/>
+                        <Button Width="70" Height="31"  Margin="2"/>
+                    </StackPanel>
+                </Border>
+            </Popup>
+        </StackPanel>
+    </Grid>
+</Window>
